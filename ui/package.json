@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
+    "react-apollo": "^2.3.1",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-router": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "shades": "git+https://git@github.com/jamesmcnamara/shades.git#develop"
   },
   "scripts": {
     "start": "react-scripts start",
