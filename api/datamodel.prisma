@@ -1,4 +1,14 @@
+enum StonerKind {
+  ELEVATED
+  CHILL
+  ACTIVE
+  ARTSY
+}
+
 type User {
   id: ID! @unique
   name: String!
+  img: String!
+  fbid: String! @unique
+  kind: StonerKind
 }
