@@ -4,3 +4,4 @@ export const white  = '#FFFFFF';
 export const orange = '#E39132';
 export const blue = '#012D5F';
 export const black = 'rgba(0, 0, 0, 0.86)';
+export const brightGreen = '#12A73C';

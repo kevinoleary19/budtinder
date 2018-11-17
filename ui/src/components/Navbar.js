@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         padding: '0 32px',
+        position: 'fixed',
+        top: 0,
+        left: 0,
     },
     //
 });

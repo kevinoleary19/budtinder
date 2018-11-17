@@ -1,4 +1,5 @@
 import './App.css';
+import './styleReset.css';
 
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
@@ -8,20 +9,22 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import client from './apollo';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import Product from './pages/ChooseProduct/Product/Product';
+import ChooseProductPage from './pages/ChooseProduct/ChooseProduct';
 
 class App extends React.Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <Navbar />
         <ApolloHooksProvider client={client}>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path="" component={Home} />
-              <Route exact path="/choose_product" component={Product} />
-            </Switch>
-          </BrowserRouter>
+          <div className="App">
+            <Navbar />
+            <BrowserRouter>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/choose_product" component={ChooseProductPage} />
+              </Switch>
+            </BrowserRouter>
+          </div>
         </ApolloHooksProvider>
       </ApolloProvider>
     );
