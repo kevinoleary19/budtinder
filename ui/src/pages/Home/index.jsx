@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 
-import useMutation from '../utils/useMutation';
+import { useMutation } from '../../shared/utils';
 
 const CREATE_USER = gql`
   mutation CreateUser($name: String!, $img: String!, $fbid: String!) {
