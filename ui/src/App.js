@@ -6,11 +6,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import client from './apollo';
 import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 class App extends React.Component {
   render() {
     return (
       <ApolloProvider client={client}>
+        <Navbar />
         <BrowserRouter>
           <Route exact path="" component={Home} />
         </BrowserRouter>
