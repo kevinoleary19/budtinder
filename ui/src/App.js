@@ -9,8 +9,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import client from './apollo';
 import Navbar from './components/Navbar';
 import budbud from './images/budbud.jpg';
+import ChatPage from './pages/Chat/Chat';
 import ChooseProductPage from './pages/ChooseProduct/ChooseProduct';
-import Product from './pages/ChooseProduct/Product/Product';
 import Home from './pages/Home';
 import Mood from './pages/Mood/Mood';
 import Swiper from './pages/Swiper';
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    window.setTimeout(() => this.setState({ showLoadingScreen: false }), 1);
+    window.setTimeout(() => this.setState({ showLoadingScreen: false }), 2000);
   }
 
   render() {
@@ -57,6 +57,7 @@ class App extends React.Component {
                   <Route exact path="/mood" component={Mood} />
                   <Route exact path="/weed_type" component={WeedType} />
                   <Route exact path="/swipe" component={Swiper} />
+                  <Route exact path="/chat" component={ChatPage} />
                 </Switch>
               </BrowserRouter>
             </ApolloHooksProvider>

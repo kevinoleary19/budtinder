@@ -1,6 +1,6 @@
 import { css, StyleSheet } from 'aphrodite';
 import gql from 'graphql-tag';
-import React, { useState } from 'react';
+import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { withRouter } from 'react-router';
 
@@ -53,7 +53,7 @@ function Home({ createUser, setUser, push }) {
   return (
     <div className={css(styles.HomePage)}>
       <Text font={Font.FuturaBold} extraStyles={[styles.text]}>
-        Lorem ipsum dolor. lkwerkljwe lkwerjlk lkkje wkler jlweklr lkwejr
+        First things first...
       </Text>
       <FacebookLogin
         appId="318588122309975"
