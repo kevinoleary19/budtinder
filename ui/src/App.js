@@ -13,6 +13,7 @@ import ChooseProductPage from './pages/ChooseProduct/ChooseProduct';
 import Mood from './pages/Mood/Mood';
 import WeedType from './pages/WeedType/WeedType';
 import budbud from './images/budbud.jpg';
+import ChatPage from './pages/Chat/Chat';
 
 
 class App extends React.Component {
@@ -49,6 +50,7 @@ class App extends React.Component {
                 <Route exact path="/choose_product" component={ChooseProductPage} />
                 <Route exact path="/mood" component={Mood} />
                 <Route exact path="/weed_type" component={WeedType} />
+                <Route exact path="/chat" component={ChatPage} />
               </Switch>
             </BrowserRouter>
           </div>
