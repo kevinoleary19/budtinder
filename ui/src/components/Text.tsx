@@ -6,6 +6,7 @@ export enum Font {
     FuturaBold = 'FuturaBold',
     ProximaNovaRegular = 'ProximaNovaRegular',
     ProximaNovaBold = 'ProximaNovaBold',
+    ProximaNovaSemibold = 'ProximaNovaSemibold',
 }
 
 const futura = 'futura-pt, sans-serif';
@@ -21,7 +22,12 @@ const styles = StyleSheet.create({
     [Font.ProximaNovaRegular]: {
         fontFamily: proximaNova,
         fontWeight: 400,
-        lineHeight: 1.5,
+        lineHeight: 1.2,
+    },
+    [Font.ProximaNovaSemibold]: {
+      fontFamily: proximaNova,
+      fontWeight: 600,
+      lineHeight: 1.3,
     },
     [Font.ProximaNovaBold]: {
       fontFamily: proximaNova,

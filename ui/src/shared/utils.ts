@@ -28,3 +28,15 @@ export const useQuery = (query: DocumentNode, args?: any) => {
   const out: any = _useQuery(query, args);
   return nullToUndefined(out);
 };
+
+export function serializeData(data: any) {
+  return Object.values(data.data.all).map((product: any) => ({
+    name: product.name,
+    type: product.category,
+    description: product.description,
+    species: product.species,
+    cbd: product.tests.cbd,
+    thc: product.tests.thc,
+    photo: product.photos ? product.photos[0] : ''
+  }));
+}
