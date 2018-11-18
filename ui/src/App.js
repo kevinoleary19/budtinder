@@ -12,9 +12,32 @@ import Navbar from './components/Navbar';
 import ChooseProductPage from './pages/ChooseProduct/ChooseProduct';
 import Mood from './pages/Mood/Mood';
 import WeedType from './pages/WeedType/WeedType';
+import budbud from './images/budbud.jpg';
+
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showLoadingScreen: true,
+    }
+  }
+
+  componentDidMount() {
+    window.setTimeout(() => this.setState({ showLoadingScreen: false }), 1);
+  }
+
   render() {
+    const { showLoadingScreen } = this.state;
+
+    if (showLoadingScreen) {
+      return (
+        <div className="LoadingScreen">
+          <img alt="budbud" src={budbud} className="LoadingScreen__Image" />
+        </div>
+      );
+    }
+
     return (
       <ApolloProvider client={client}>
         <ApolloHooksProvider client={client}>
