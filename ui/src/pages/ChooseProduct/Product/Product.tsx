@@ -1,9 +1,10 @@
 import { css } from 'aphrodite/no-important';
 import * as React from 'react';
-import styles from './styles';
-import Text, { Font } from '../../../components/Text';
 
-export default function Product ({
+import Text, { Font } from '../../../components/Text';
+import styles from './styles';
+
+export default function Product({
   name,
   type,
   isChosen,
@@ -12,7 +13,7 @@ export default function Product ({
   cbd,
   thc,
   onProductSelect,
-  photo,
+  photo
 }: any) {
   return (
     <section
@@ -33,4 +34,4 @@ export default function Product ({
       </Text>
     </section>
   );
-};
+}

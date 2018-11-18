@@ -14,13 +14,7 @@
     "noImplicitAny": false,
     "noEmit": true,
     "jsx": "preserve",
-    "lib": [
-        "es6",
-        "dom",
-        "esnext"
-    ],
+    "lib": ["es6", "dom", "esnext"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
