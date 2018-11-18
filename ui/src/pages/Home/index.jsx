@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
-import React, { useState } from 'react';
+import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 
 import { css, StyleSheet } from 'aphrodite';
-import Text, { Font } from '../components/Text';
+import Text, { Font } from '../../components/Text';
 import { useMutation } from '../../shared/utils';
 
 const CREATE_USER = gql`

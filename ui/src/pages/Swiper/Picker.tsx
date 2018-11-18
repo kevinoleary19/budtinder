@@ -1,8 +1,10 @@
 import HammerJS from 'hammerjs';
 import * as React from 'react';
 import Hammer from 'react-hammerjs';
-
+import Text, { Font } from '../../components/Text';
+import { css } from 'aphrodite';
 import { $User } from '../../shared/types';
+import styles from './styles';
 
 interface $Props {
   user: $User;
@@ -20,11 +22,18 @@ export function Picker({ user, swipeLeft, swipeRight }: $Props): JSX.Element {
   };
 
   return (
-    <Hammer onSwipe={handleSwipe}>
-      <div style={{ width: '90%', margin: 'auto' }}>
-        <img src={user.img} />
-        <h2>{user.name}</h2>
-      </div>
-    </Hammer>
+    <div className={css(styles.Picker)}>
+    <Text font={Font.FuturaBold} extraStyles={[styles.subheader]}>
+      Find yourself a bud that you can chill with. Swipe right to approve.
+    </Text>
+      <Hammer onSwipe={handleSwipe}>
+        <div className={css(styles.card)}>
+          <img src={user.img} className={css(styles.image)} />
+          <Text extraStyles={[styles.text]} font={Font.ProximaNovaBold}>
+            {user.name}
+          </Text>
+        </div>
+      </Hammer>
+    </div>
   );
 }
