@@ -15,9 +15,32 @@ import Mood from './pages/Mood/Mood';
 import Swiper from './pages/Swiper';
 import WeedType from './pages/WeedType/WeedType';
 import Store from './shared/components/Store';
+import budbud from './images/budbud.jpg';
+
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showLoadingScreen: true,
+    }
+  }
+
+  componentDidMount() {
+    window.setTimeout(() => this.setState({ showLoadingScreen: false }), 1);
+  }
+
   render() {
+    const { showLoadingScreen } = this.state;
+
+    if (showLoadingScreen) {
+      return (
+        <div className="LoadingScreen">
+          <img alt="budbud" src={budbud} className="LoadingScreen__Image" />
+        </div>
+      );
+    }
+
     return (
       <React.Suspense fallback={() => 'loading...'}>
         <Store>

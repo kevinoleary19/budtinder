@@ -1,7 +1,9 @@
 import gql from 'graphql-tag';
-import React from 'react';
+import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
+import { css, StyleSheet } from 'aphrodite';
+import Text, { Font } from '../components/Text';
 import { useMutation } from '../../shared/utils';
 
 const CREATE_USER = gql`
@@ -18,6 +20,24 @@ const CREATE_USER = gql`
   }
 `;
 
+const styles = StyleSheet.create({
+  HomePage: {
+    width: '100vw',
+    height: 'calc(100vh - 44px)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  //
+  text: {
+    marginBottom: 40,
+    fontSize: 24,
+    textAlign: 'center',
+    width: 260,
+  },
+});
+
 export default function HomeContainer() {
   const createUser = useMutation(CREATE_USER);
   return <Home createUser={createUser} />;
@@ -25,7 +45,10 @@ export default function HomeContainer() {
 
 function Home({ createUser }) {
   return (
-    <div>
+    <div className={css(styles.HomePage)}>
+      <Text font={Font.FuturaBold} extraStyles={[styles.text]}>
+        Lorem ipsum dolor. lkwerkljwe lkwerjlk lkkje wkler jlweklr  lkwejr
+      </Text>
       <FacebookLogin
         appId="318588122309975"
         autoLoad={true}
