@@ -1,9 +1,11 @@
+import { css, StyleSheet } from 'aphrodite';
 import gql from 'graphql-tag';
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
+import { withRouter } from 'react-router';
 
-import { css, StyleSheet } from 'aphrodite';
-import Text, { Font } from '../components/Text';
+import Text, { Font } from '../../components/Text';
+import { useStore } from '../../shared/components/Store';
 import { useMutation } from '../../shared/utils';
 
 const CREATE_USER = gql`
@@ -27,38 +29,44 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   //
   text: {
     marginBottom: 40,
     fontSize: 24,
     textAlign: 'center',
-    width: 260,
-  },
+    width: 260
+  }
 });
 
-export default function HomeContainer() {
+function HomeContainer({ history }) {
   const createUser = useMutation(CREATE_USER);
-  return <Home createUser={createUser} />;
+  const {
+    actions: { setUser }
+  } = useStore();
+  return <Home setUser={setUser} push={history.push} createUser={createUser} />;
 }
+export default withRouter(HomeContainer);
 
-function Home({ createUser }) {
+function Home({ createUser, setUser, push }) {
   return (
     <div className={css(styles.HomePage)}>
       <Text font={Font.FuturaBold} extraStyles={[styles.text]}>
-        Lorem ipsum dolor. lkwerkljwe lkwerjlk lkkje wkler jlweklr  lkwejr
+        Lorem ipsum dolor. lkwerkljwe lkwerjlk lkkje wkler jlweklr lkwejr
       </Text>
       <FacebookLogin
         appId="318588122309975"
         autoLoad={true}
         fields="name,id,picture.width(200)"
         callback={data => {
-          console.log('data is ', data);
           createUser({
             name: data.name,
             fbid: data.id,
             img: data.picture.data.url
+          }).then(({ data: { upsertUser } }) => {
+            setUser(upsertUser);
+            push('/mood');
           });
         }}
       />

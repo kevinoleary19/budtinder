@@ -1,13 +1,41 @@
 import { css } from 'aphrodite/no-important';
+import { isTypeSystemExtensionNode } from 'graphql';
+import gql from 'graphql-tag';
 import * as React from 'react';
-import styles from './styles';
+import { withRouter } from 'react-router-dom';
+
 import Text, { Font } from '../../components/Text';
 import moodData from '../../data/mood';
+import { useStore } from '../../shared/components/Store';
+import UserFragments from '../../shared/fragments/UserFragments';
+import { useMutation } from '../../shared/utils';
+import styles from './styles';
 
+const mutation = gql`
+  mutation settype($kind: StonerKind!, $id: ID!) {
+    updateUser(where: { id: $id }, data: { id: $id }) {
+      ...AllUser
+    }
+  }
+  ${UserFragments.all}
+`;
 
-export default function Mood ({
-  onMoodSelect,
-}) {
+function MoodContainer({ history }) {
+  const {
+    state: { user }
+  } = useStore();
+  const setType = useMutation(mutation);
+  return (
+    <Mood
+      onMoodSelect={kind => {
+        setType({ id: user.id, kind });
+        history.push('/swipe');
+      }}
+    />
+  );
+}
+export default withRouter(MoodContainer);
+function Mood({ onMoodSelect }) {
   return (
     <section className={css(styles.Mood)}>
       <Text font={Font.FuturaBold} extraStyles={[styles.header]}>
@@ -26,4 +54,4 @@ export default function Mood ({
       ))}
     </section>
   );
-};
+}

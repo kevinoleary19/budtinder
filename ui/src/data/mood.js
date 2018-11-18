@@ -1,31 +1,31 @@
-import intellectualConvo from '../images/intellectual-convo@3x.png';
 import bobRoss from '../images/creative-bobross@3x.png';
 import energeticSocial from '../images/energetic-social@3x.png';
+import intellectualConvo from '../images/intellectual-convo@3x.png';
 import watchtvstoned from '../images/watchtv-stoned@3x.png';
 
 export default [
   {
     key: 0,
-    identifier: 'a',
+    identifier: 'ACTIVE',
     text: 'Energetic & Social',
-    photo: energeticSocial,
+    photo: energeticSocial
   },
   {
     key: 1,
-    identifier: 'b',
+    identifier: 'CHILL',
     text: 'Netflix & Chill',
-    photo: watchtvstoned,
+    photo: watchtvstoned
   },
   {
     key: 2,
-    identifier: 'c',
+    identifier: 'ARTSY',
     text: 'Creative & Artsy',
-    photo: bobRoss,
+    photo: bobRoss
   },
   {
     key: 3,
-    identifier: 'd',
+    identifier: 'ELEVATED',
     text: 'Elevated & Introspective',
-    photo: intellectualConvo,
-  },
-]
+    photo: intellectualConvo
+  }
+];

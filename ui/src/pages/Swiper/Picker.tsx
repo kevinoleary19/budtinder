@@ -7,7 +7,7 @@ import { $User } from '../../shared/types';
 interface $Props {
   user: $User;
   swipeLeft(): void;
-  swipeRight(): void;
+  swipeRight(user: $User): void;
 }
 
 export function Picker({ user, swipeLeft, swipeRight }: $Props): JSX.Element {
@@ -15,7 +15,7 @@ export function Picker({ user, swipeLeft, swipeRight }: $Props): JSX.Element {
     if (direction === HammerJS.DIRECTION_LEFT) {
       swipeLeft();
     } else if (direction === HammerJS.DIRECTION_RIGHT) {
-      swipeRight();
+      swipeRight(user);
     }
   };
 

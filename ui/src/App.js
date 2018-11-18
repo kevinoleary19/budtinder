@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import client from './apollo';
 import Navbar from './components/Navbar';
+import budbud from './images/budbud.jpg';
 import ChooseProductPage from './pages/ChooseProduct/ChooseProduct';
 import Product from './pages/ChooseProduct/Product/Product';
 import Home from './pages/Home';
@@ -15,15 +16,13 @@ import Mood from './pages/Mood/Mood';
 import Swiper from './pages/Swiper';
 import WeedType from './pages/WeedType/WeedType';
 import Store from './shared/components/Store';
-import budbud from './images/budbud.jpg';
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLoadingScreen: true,
-    }
+      showLoadingScreen: true
+    };
   }
 
   componentDidMount() {

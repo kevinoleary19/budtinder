@@ -37,6 +37,7 @@ interface $Props {
 
 interface $Actions {
   setUser(user: $User): void;
+  setMood(string: string): void;
 }
 
 export default class Store extends React.Component<$Props, $State> {
@@ -44,6 +45,10 @@ export default class Store extends React.Component<$Props, $State> {
   actions: $Actions = {
     setUser: user => {
       this.setState({ user });
+    },
+    setMood: kind => {
+      // @ts-ignore
+      this.setState({ user: { ...this.state.user, kind } });
     }
   };
 

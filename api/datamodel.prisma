@@ -12,3 +12,9 @@ type User {
   fbid: String! @unique
   kind: StonerKind
 }
+
+type SaidYes {
+  id: ID! @unique
+  from: ID!
+  to: ID!
+}
