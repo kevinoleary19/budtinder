@@ -47,7 +47,7 @@ function Home({ createUser }) {
   return (
     <div className={css(styles.HomePage)}>
       <Text font={Font.FuturaBold} extraStyles={[styles.text]}>
-        Lorem ipsum dolor. lkwerkljwe lkwerjlk lkkje wkler jlweklr  lkwejr
+        First things first...
       </Text>
       <FacebookLogin
         appId="318588122309975"
