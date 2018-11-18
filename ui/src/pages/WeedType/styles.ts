@@ -8,8 +8,8 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    height: 'calc(100vh - 44px)',
-    padding: '15% 0',
+    height: '100vh',
+    paddingTop: '25%',
   },
   //
   card: {

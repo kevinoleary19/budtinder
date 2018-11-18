@@ -8,7 +8,7 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    height: 'calc(100vh - 44px)',
+    height: '100vh',
     padding: '30% 0',
   },
   //
